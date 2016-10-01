@@ -1,0 +1,11 @@
+cn/edu/fudan/ada/vcs2/Application.class
+cn/edu/fudan/ada/vcs2/CourseRepository.class
+cn/edu/fudan/ada/vcs2/StudentRepository.class
+cn/edu/fudan/ada/vcs2/InstructorRepository.class
+cn/edu/fudan/ada/vcs2/Customer.class
+cn/edu/fudan/ada/vcs2/Register.class
+cn/edu/fudan/ada/vcs2/RegisterRepository.class
+cn/edu/fudan/ada/vcs2/Student.class
+cn/edu/fudan/ada/vcs2/CustomerRepository.class
+cn/edu/fudan/ada/vcs2/Instructor.class
+cn/edu/fudan/ada/vcs2/Course.class
