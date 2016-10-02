@@ -1,0 +1,9 @@
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/RegisterRepository.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/Application.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Student.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Instructor.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/StudentRepository.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/CourseRepository.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/InstructorRepository.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Course.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Register.java
