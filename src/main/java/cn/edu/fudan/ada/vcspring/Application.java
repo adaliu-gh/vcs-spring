@@ -17,13 +17,21 @@ public class Application {
   }
 
 	@Bean
-	public CommandLineRunner demo(StudentRepository sRepo, CourseRepository cRepo, InstructorRepository iRepo,RegisterRepository rRepo) {
+	public CommandLineRunner demo(IdentityRepository id, StudentRepository sRepo, CourseRepository cRepo, InstructorRepository iRepo,RegisterRepository rRepo) {
 		return (args) -> {
 
+        id.save(new Identity("0001","0001","student"));
+        id.save(new Identity("0002","0002","student"));
+        id.save(new Identity("0003","0003","student"));
+        id.save(new Identity("0004","0004","student"));
+        id.save(new Identity("0005","0005","student"));
+        id.save(new Identity("1001","1001","instructor"));
+        id.save(new Identity("1002","1002","instructor"));
+        id.save(new Identity("1003","1003","instructor"));
       // save a couple of registers
-      rRepo.save(new Register("0001", "English","0001","Individual","0001","Alice"));
-      rRepo.save(new Register("0002", "Math","0002","O'Brian","0003","Cat"));
-      rRepo.save(new Register("0003", "Computer","0003","Palmer","0001","Alice"));
+      rRepo.save(new Register("0001", "English","0001","Individual","1001","Alice"));
+      rRepo.save(new Register("0002", "Math","0002","O'Brian","1003","Cat"));
+      rRepo.save(new Register("0003", "Computer","0003","Palmer","1001","Alice"));
 
         // fetch all registers
       log.info("Registers found with findAll():");
@@ -50,17 +58,17 @@ public class Application {
       log.info("");
 
       // fetch register by instructor-id
-      log.info("Register found with findByIId('0002'):");
+      log.info("Register found with findByIId('1002'):");
       log.info("--------------------------------------------");
-      for (Register individual : rRepo.findByIId("0002")) {
+      for (Register individual : rRepo.findByIId("1002")) {
           log.info(individual.toString());
       }
       log.info("");
 
       // save a couple of instructors
-      iRepo.save(new Instructor("0001", "Alice"));
-      iRepo.save(new Instructor("0002", "Bob"));
-      iRepo.save(new Instructor("0003", "Cat"));
+      iRepo.save(new Instructor("1001", "Alice"));
+      iRepo.save(new Instructor("1002", "Bob"));
+      iRepo.save(new Instructor("1003", "Cat"));
 
         // fetch all instructors
       log.info("Instructors found with findAll():");
@@ -70,8 +78,8 @@ public class Application {
       }
       log.info("");
         // fetch an individual instructor by ID
-      Instructor instructor = iRepo.findById("0002");
-      log.info("Instructor found with findById(\"0002\"):");
+      Instructor instructor = iRepo.findById("1002");
+      log.info("Instructor found with findById(\"1002\"):");
       log.info("--------------------------------");
       log.info(instructor.toString());
       log.info("");
@@ -114,11 +122,11 @@ public class Application {
       log.info("");
 
       // save a couple of courses
-      cRepo.save(new Course("0001", "English","0001","Alice"));
-      cRepo.save(new Course("0005", "Chinese","0002","Bob"));
-      cRepo.save(new Course("0002", "Math","0003","Cat"));
-      cRepo.save(new Course("0003", "Computer","0001","Alice"));
-      cRepo.save(new Course("0004", "Art","0002","Bob"));
+      cRepo.save(new Course("0001", "English","1001","Alice"));
+      cRepo.save(new Course("0005", "Chinese","1002","Bob"));
+      cRepo.save(new Course("0002", "Math","1003","Cat"));
+      cRepo.save(new Course("0003", "Computer","1001","Alice"));
+      cRepo.save(new Course("0004", "Art","1002","Bob"));
 
       // fetch all courses
       log.info("Courses found with findAll():");
@@ -152,9 +160,9 @@ public class Application {
       log.info("");
 
       // fetch courses by instructor-id
-      log.info("Course found with findByIId('0002'):");
+      log.info("Course found with findByIId('1002'):");
       log.info("--------------------------------------------");
-      for (Course individual : cRepo.findByIId("0002")) {
+      for (Course individual : cRepo.findByIId("1002")) {
           log.info(individual.toString());
       }
       log.info("");
