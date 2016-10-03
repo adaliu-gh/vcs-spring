@@ -16,9 +16,12 @@ public class LoginController {
     @RequestMapping("/login")
     public String login(@RequestParam(value="id") String id, @RequestParam(value="password")String password,Model model) {
         Identity identity=identityRepository.findByIdAndPassword(id,password);
-        model.addAttribute("id", identity.getId());
-        model.addAttribute("role",identity.getRole());
-        return "hello";
+        if (identity==null){
+            return "bye";
+        }
+        else {
+            return identity.getRole();
+        }
     }
 
 }
