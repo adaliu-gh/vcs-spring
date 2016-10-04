@@ -20,7 +20,7 @@ public class LoginController {
             return "bye";
         }
         else {
-            return identity.getRole();
+            return "redirect:/"+identity.getRole()+"/"+identity.getId();
         }
     }
 

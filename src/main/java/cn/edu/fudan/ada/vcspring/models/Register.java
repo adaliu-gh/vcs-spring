@@ -35,4 +35,26 @@ public class Register{
     public String toString(){
         return String.format("Register[id=%d, cId=%s, cName=%s, sId=%s, sName=%s, iId=%s,iName=%s,score=%d]",id,cId,cName,sId,sName,iId,iName,score);
     }
+
+    public String getCId(){
+        return cId;
+    }
+    public String getCName(){
+        return cName;
+    }
+    public String getSId(){
+        return sId;
+    }
+    public String getSName(){
+        return sName;
+    }
+    public String getIId(){
+        return iId;
+    }
+    public String getIName(){
+        return iName;
+    }
+    public int getScore(){
+        return score;
+    }
 }

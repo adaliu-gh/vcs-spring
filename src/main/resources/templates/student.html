@@ -5,9 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-  <button type="button"> Query for Courses </button><br/>
-  <button type="button"> Add a Course</button><br/>
-  <button type="button"> Drop a Course</button><br/>
-  <button type="button"> My Courses</button>
+  <p th:text="${student.id}+ '::' +${student.name}"/>
+
+    <form name="register" th:attr="action=@{'/student/'+${student.id}+'/register'}" method="get">
+      <input type="submit" value="My Courses"></input>
+    </form>
 </body>
 </html>
