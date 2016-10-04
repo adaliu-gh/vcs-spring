@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <p th:text="${id}"/>
+  <form name="back" th:attr="action=@{'/'+${role}+'/'+${id}}" method="get">
+    <input type="submit" value="Back"></input>
+    </form>
+  <ul>
+    <li>course_id::course_name::instructor_id::instructor_name::</li>
+  </ul>
+  <ul th:each="course: ${courses}">
+    <li>
+      <span th:text="${course.id}">cId</span>::
+      <span th:text="${course.name}">cName</span>::
+      <span th:text="${course.iId}">iId</span>::
+      <span th:text="${course.iName}">iName</span>::
+    </li>
+  </ul>
+</body>
+</html>

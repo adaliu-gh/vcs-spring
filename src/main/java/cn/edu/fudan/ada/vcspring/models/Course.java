@@ -28,4 +28,19 @@ public class Course{
     public String toString(){
         return String.format("Course[id=%s, name=%S,iId=%s,iName=%s]",id,name,iId,iName);
     }
+
+    public String getId(){
+        return id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getIId(){
+        return iId;
+    }
+    public String getIName(){
+        return iName;
+    }
 }

@@ -18,6 +18,9 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
 
+    @Autowired
+    private CourseRepository courseRepository;
+
     @RequestMapping("/student/{id}")
     public String login(@PathVariable("id") String id,Model model) {
         Student student=studentRepository.findById(id);
@@ -28,8 +31,18 @@ public class StudentController {
     @RequestMapping("/student/{id}/register")
     public String sMyCourses(@PathVariable("id") String id, Model model){
         List<Register> registers=registerRepository.findBySId(id);
+        model.addAttribute("id",id);
         model.addAttribute("registers",registers);
         return "register";
+    }
+
+    @RequestMapping("/student/{id}/course")
+    public String sCourseQuery(@PathVariable("id") String id, @RequestParam(value="cId",required=false,defaultValue="%" ) String cId, @RequestParam(value="cName",required=false, defaultValue="%") String cName, @RequestParam(value="iName",required=false,defaultValue="%")String iName, Model model){
+        List<Course> courses=courseRepository.findByIdLikeAndNameLikeAndINameLike(cId,cName,iName);
+        model.addAttribute("id",id);
+        model.addAttribute("role","student");
+        model.addAttribute("courses",courses);
+        return "course";
     }
 
 }
