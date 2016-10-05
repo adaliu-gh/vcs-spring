@@ -6,7 +6,7 @@
 </head>
 <body>
   <p th:text="${id}"/>
-  <form name="back" th:attr="action=@{'/'+${role}+'/'+${id}}" method="get">
+  <form name="back" th:action="@{'/'+${role}+'/'+${id}}" method="get">
     <input type="submit" value="Back"></input>
     </form>
   <ul>
@@ -14,10 +14,13 @@
   </ul>
   <ul th:each="course: ${courses}">
     <li>
-      <span th:text="${course.id}">cId</span>::
-      <span th:text="${course.name}">cName</span>::
-      <span th:text="${course.iId}">iId</span>::
-      <span th:text="${course.iName}">iName</span>::
+      <form th:action="@{'/' + ${role} + '/' + ${id} +'/course/add'}" method="post">
+        <input type="text" name="cId" th:value="${course.id}" readonly="readonly"></input>
+        <input type="text" name="cName" th:value="${course.name}" readonly="readonly"></input>
+        <input type="text" name="iId" th:value="${course.iId}" readonly="readonly"></input>
+        <input type="text" name="iName" th:value="${course.iName}" readonly="readonly"></input>
+        <input type="submit" th:value="add"></input>
+        </form>
     </li>
   </ul>
 </body>
