@@ -13,24 +13,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class StudentController {
 
     @Autowired
-    private RegisterRepository registerRepository;
+    private RegisterDao registerDao;
 
     @Autowired
-    private StudentRepository studentRepository;
+    private StudentDao studentDao;
 
     @Autowired
-    private CourseRepository courseRepository;
+    private CourseDao courseDao;
 
     @RequestMapping("/student/{id}")
     public String login(@PathVariable("id") String id,Model model) {
-        Student student=studentRepository.findById(id);
+        Student student=studentDao.findById(id);
         model.addAttribute("student",student);
         return "student";
     }
 
     @RequestMapping("/student/{id}/register")
     public String sMyCourses(@PathVariable("id") String id, Model model){
-        List<Register> registers=registerRepository.findBySId(id);
+        List<Register> registers=registerDao.findBySId(id);
         model.addAttribute("id",id);
         model.addAttribute("registers",registers);
         return "register";
@@ -38,7 +38,7 @@ public class StudentController {
 
     @RequestMapping("/student/{id}/course")
     public String sCourseQuery(@PathVariable("id") String id, @RequestParam(value="cId",required=false,defaultValue="%" ) String cId, @RequestParam(value="cName",required=false, defaultValue="%") String cName, @RequestParam(value="iName",required=false,defaultValue="%")String iName, Model model){
-        List<Course> courses=courseRepository.findByIdLikeAndNameLikeAndINameLike(cId,cName,iName);
+        List<Course> courses=courseDao.findByIdLikeAndNameLikeAndINameLike(cId,cName,iName);
         model.addAttribute("id",id);
         model.addAttribute("role","student");
         model.addAttribute("courses",courses);

@@ -4,7 +4,7 @@ import java.util.*;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface CourseRepository extends CrudRepository<Course, String>{
+public interface CourseDao extends CrudRepository<Course, String>{
 
     Course findById(String id);
     List<Course> findByName(String name);

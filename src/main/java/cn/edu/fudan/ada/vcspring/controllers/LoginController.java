@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 
     @Autowired
-    private IdentityRepository identityRepository;
+    private IdentityDao identityDao;
 
     @RequestMapping("/login")
     public String login(@RequestParam(value="id") String id, @RequestParam(value="password")String password,Model model) {
-        Identity identity=identityRepository.findByIdAndPassword(id,password);
+        Identity identity=identityDao.findByIdAndPassword(id,password);
         if (identity==null){
             return "bye";
         }
