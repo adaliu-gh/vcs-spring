@@ -13,7 +13,7 @@ import java.util.List;
 public class RegisterService{
 
     @Transactional
-    public String insertNewRegister(String cId, String cName,String iId, String iName, String sId) {
+    public String addRegister(String cId, String cName,String iId, String iName, String sId) {
 
         Register oldRegister=registerDao.findByCIdAndSId(cId,sId);
         if (oldRegister!=null){
@@ -23,6 +23,19 @@ public class RegisterService{
             String sName=studentDao.findById(sId).getName();
             Register register= registerDao.save(new Register(cId,cName,sId,sName,iId,iName));
             return "Course added successfully!";
+        }
+    }
+
+    @Transactional
+    public String deleteRegister(String cId, String cName,String iId, String iName, String sId) {
+
+        Register oldRegister=registerDao.findByCIdAndSId(cId,sId);
+        if (oldRegister==null){
+            return "Sorry, you have NOT added this course!";
+        }
+        else {
+            registerDao.delete(oldRegister);
+            return "Course deleted successfully!";
         }
     }
 
