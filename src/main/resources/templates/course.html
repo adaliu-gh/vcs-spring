@@ -24,7 +24,6 @@
         <input type="text" name="iId" th:value="${course.iId}" readonly="readonly"></input>
         <input type="text" name="iName" th:value="${course.iName}" readonly="readonly"></input>
         <input type="submit" th:value="add"></input>
-        <input type="submit" th:value="delete" th:formaction="@{'/' + ${role} + '/' + ${id} +'/course/delete'}" ></input>
         </form>
     </li>
   </ul>

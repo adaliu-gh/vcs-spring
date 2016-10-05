@@ -6,10 +6,26 @@
 <body>
   <p th:text="${student.id}+ '::' +${student.name}"/>
 
-    <form name="register" th:attr="action=@{'/student/'+${student.id}+'/register'}" method="get">
-      <input type="submit" value="My Courses"></input>
-    </form>
+  <ul>
+    <li>
+      <input type="text" value="course_id" readonly="readonly"></input>
+      <input type="text" value="course_name" readonly="readonly"></input>
+      <input type="text" value="instructor_id" readonly="readonly"></input>
+      <input type="text" value="instructor_name" readonly="readonly"></input>
+    </li>
+  </ul>
 
+  <ul th:each="register: ${registers}">
+    <li>
+      <form th:action="@{'/student/' + ${student.id} +'/course/delete'}" method="post">
+        <input type="text" name="cId" th:value="${register.cId}" readonly="readonly"></input>
+        <input type="text" name="cName" th:value="${register.cName}" readonly="readonly"></input>
+        <input type="text" name="iId" th:value="${register.iId}" readonly="readonly"></input>
+        <input type="text" name="iName" th:value="${register.iName}" readonly="readonly"></input>
+        <input type="submit" th:value="delete"></input>
+        </form>
+    </li>
+  </ul>
     <form name="query" th:attr="action=@{'/student/'+${student.id}+'/course'}" method="get">
       course_id:<input type="text" name="cId"></input><br/>
       course_name:<input type="text" name="cName"></input><br/>
