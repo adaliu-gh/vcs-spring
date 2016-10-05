@@ -46,4 +46,10 @@ public class StudentController {
         return "course";
     }
 
+    @RequestMapping("/student/{id}/course/add")
+    public String sAddCourse(@PathVariable("id") String sId, @RequestParam(value="cId") String cId, @RequestParam(value="cName") String cName,@RequestParam(value="iId")String iId, @RequestParam(value="iName")String iName, Model model){
+       String feedback=registerService.insertNewRegister(cId,cName,iId,iName,sId);
+       model.addAttribute("feedback",feedback);
+       return "feedback";
+    }
 }

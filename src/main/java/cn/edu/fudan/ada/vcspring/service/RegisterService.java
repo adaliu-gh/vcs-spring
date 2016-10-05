@@ -13,15 +13,16 @@ import java.util.List;
 public class RegisterService{
 
     @Transactional
-    public Register insertNewRegister(String cId, String cName,String iId, String iName, String sId) {
+    public String insertNewRegister(String cId, String cName,String iId, String iName, String sId) {
 
         Register oldRegister=registerDao.findByCIdAndSId(cId,sId);
         if (oldRegister!=null){
-            return oldRegister;
+            return "You have already added this course!";
         }
         else {
             String sName=studentDao.findById(sId).getName();
-            return registerDao.save(new Register(cId,cName,sId,sName,iId,iName));
+            Register register= registerDao.save(new Register(cId,cName,sId,sName,iId,iName));
+            return "Course added successfully!";
         }
     }
 
