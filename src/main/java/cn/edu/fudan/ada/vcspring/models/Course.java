@@ -14,6 +14,8 @@ public class Course{
     private String name;
     private String iId;
     private String iName;
+    private int capacity=2;
+    private int margin=2;
 
     protected Course(){};
 
@@ -26,7 +28,7 @@ public class Course{
 
     @Override
     public String toString(){
-        return String.format("Course[id=%s, name=%S,iId=%s,iName=%s]",id,name,iId,iName);
+        return String.format("Course[id=%s, name=%S,iId=%s,iName=%s,capacity=%d,margin=%d]",id,name,iId,iName);
     }
 
     public String getId(){
@@ -42,5 +44,14 @@ public class Course{
     }
     public String getIName(){
         return iName;
+    }
+    public int getCapacity(){
+        return capacity;
+    }
+    public int getMargin(){
+        return margin;
+    }
+    public void setMargin(int margin){
+        this.margin=margin;
     }
 }

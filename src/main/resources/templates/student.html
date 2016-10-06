@@ -5,13 +5,21 @@
 </head>
 <body>
   <p th:text="${student.id}+ '::' +${student.name}"/>
-
+  <p th:text="${feedback}"/>
+  <form name="refresh" th:action="@{'/student/'+${student.id}}" method="get">
+    <input type="submit" value="refresh"></input>
+    </form>
+  <form name="logout" action="/index.html" method="get">
+    <input type="submit" value="logout"></input>
+    </form>
+<hr/>
   <ul>
     <li>
       <input type="text" value="course_id" readonly="readonly"></input>
       <input type="text" value="course_name" readonly="readonly"></input>
       <input type="text" value="instructor_id" readonly="readonly"></input>
       <input type="text" value="instructor_name" readonly="readonly"></input>
+      <input type="text" value="scores" readonly="readonly"></input>
     </li>
   </ul>
 
@@ -22,15 +30,28 @@
         <input type="text" name="cName" th:value="${register.cName}" readonly="readonly"></input>
         <input type="text" name="iId" th:value="${register.iId}" readonly="readonly"></input>
         <input type="text" name="iName" th:value="${register.iName}" readonly="readonly"></input>
+        <input type="text" name="iName" th:value="${register.score}==-1?'Not yet':${register.score}" readonly="readonly"></input>
         <input type="submit" th:value="delete"></input>
         </form>
     </li>
   </ul>
+<hr/>
+  <ul>
+    <li>
+      <input type="text" value="course_id" readonly="readonly"></input>
+      <input type="text" value="course_name" readonly="readonly"></input>
+      <input type="text" value="instructor_id" readonly="readonly"></input>
+    </li>
+  </ul>
+  <ul>
+    <li>
     <form name="query" th:attr="action=@{'/student/'+${student.id}+'/course'}" method="get">
-      course_id:<input type="text" name="cId"></input><br/>
-      course_name:<input type="text" name="cName"></input><br/>
-      instructor_name:<input type="text" name="iName"></input><br/>
+      <input type="text" name="cId"></input>
+      <input type="text" name="cName"></input>
+      <input type="text" name="iName"></input>
       <input type="submit" value="Course Query"></input>
     </form>
+    </li>
+    </ul>
 </body>
 </html>

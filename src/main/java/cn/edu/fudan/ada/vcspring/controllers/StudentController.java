@@ -23,10 +23,11 @@ public class StudentController {
     private CourseService courseService;
 
     @RequestMapping("/student/{id}")
-    public String login(@PathVariable("id") String id,Model model) {
+    public String login(@PathVariable("id") String id,@RequestParam(value="feedback",required=false,defaultValue="Welcome!") String feedback,Model model) {
         Student student=studentService.findById(id);
         List<Register> registers=registerService.findBySId(id);
         model.addAttribute("student",student);
+        model.addAttribute("feedback",feedback);
         model.addAttribute("registers",registers);
         return "student";
     }
@@ -53,8 +54,7 @@ public class StudentController {
        String feedback=registerService.addRegister(cId,cName,iId,iName,sId);
        model.addAttribute("id",sId);
        model.addAttribute("role","student");
-       model.addAttribute("feedback",feedback);
-       return "feedback";
+       return "redirect:/student/"+sId+"?feedback="+feedback;
     }
 
 
@@ -63,7 +63,6 @@ public class StudentController {
         String feedback=registerService.deleteRegister(cId,cName,iId,iName,sId);
         model.addAttribute("id",sId);
         model.addAttribute("role","student");
-        model.addAttribute("feedback",feedback);
-        return "feedback";
+        return "redirect:/student/"+sId+"?feedback="+feedback;
     }
 }

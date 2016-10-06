@@ -18,7 +18,7 @@ public class Register{
     private String sName;
     private String iId;
     private String iName;
-    private int score;
+    private int score=-1;
 
     protected Register(){};
 

@@ -20,9 +20,19 @@ public class RegisterService{
             return "You have already added this course!";
         }
         else {
-            String sName=studentDao.findById(sId).getName();
-            Register register= registerDao.save(new Register(cId,cName,sId,sName,iId,iName));
-            return "Course added successfully!";
+            Course course=courseDao.findById(cId);
+            int capacity=course.getCapacity();
+            int margin=course.getMargin();
+            if (margin==0){
+                return "Sorry, capacity for this course is full!";
+            }
+            else{
+                String sName=studentDao.findById(sId).getName();
+                Register register= registerDao.save(new Register(cId,cName,sId,sName,iId,iName));
+                course.setMargin(margin-1);
+                courseDao.save(course);
+                return "Course added successfully!";
+            }
         }
     }
 
@@ -34,7 +44,11 @@ public class RegisterService{
             return "Sorry, you have NOT added this course!";
         }
         else {
+            Course course=courseDao.findById(cId);
+            int margin=course.getMargin();
             registerDao.delete(oldRegister);
+            course.setMargin(margin+1);
+            courseDao.save(course);
             return "Course deleted successfully!";
         }
     }
@@ -49,4 +63,6 @@ public class RegisterService{
     @Autowired
     private StudentDao studentDao;
 
+    @Autowired
+    private CourseDao courseDao;
 }
