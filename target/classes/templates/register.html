@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <p th:text="${id}"/>
+  <form name="back" th:attr="action=@{'/student/'+${id}}" method="get">
+    <input type="submit" value="Back"></input>
+    </form>
+  <ul>
+    <li>course_id::course_name::instructor_id::instructor_name::score</li>
+  </ul>
+  <ul th:each="register: ${registers}">
+    <li>
+      <span th:text="${register.cId}">cId</span>::
+      <span th:text="${register.cName}">cName</span>::
+      <span th:text="${register.iId}">iId</span>::
+      <span th:text="${register.iName}">iName</span>::
+      <span th:text="${register.score}">scores</span>
+    </li>
+  </ul>
+</body>
+</html>

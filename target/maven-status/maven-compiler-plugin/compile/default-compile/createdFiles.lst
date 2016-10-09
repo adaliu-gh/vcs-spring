@@ -1,0 +1,16 @@
+cn/edu/fudan/ada/vcspring/models/CourseDao.class
+cn/edu/fudan/ada/vcspring/models/InstructorDao.class
+cn/edu/fudan/ada/vcspring/models/IdentityDao.class
+cn/edu/fudan/ada/vcspring/controllers/StudentController.class
+cn/edu/fudan/ada/vcspring/controllers/LoginController.class
+cn/edu/fudan/ada/vcspring/models/Identity.class
+cn/edu/fudan/ada/vcspring/models/Instructor.class
+cn/edu/fudan/ada/vcspring/service/StudentService.class
+cn/edu/fudan/ada/vcspring/models/Register.class
+cn/edu/fudan/ada/vcspring/service/CourseService.class
+cn/edu/fudan/ada/vcspring/models/StudentDao.class
+cn/edu/fudan/ada/vcspring/models/Course.class
+cn/edu/fudan/ada/vcspring/models/RegisterDao.class
+cn/edu/fudan/ada/vcspring/service/RegisterService.class
+cn/edu/fudan/ada/vcspring/Application.class
+cn/edu/fudan/ada/vcspring/models/Student.class

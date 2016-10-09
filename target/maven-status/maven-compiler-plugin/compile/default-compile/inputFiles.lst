@@ -1,0 +1,16 @@
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/service/StudentService.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/service/CourseService.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/controllers/StudentController.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/service/RegisterService.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Course.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/controllers/LoginController.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/StudentDao.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/CourseDao.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/InstructorDao.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/Application.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Student.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Instructor.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/RegisterDao.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/IdentityDao.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Identity.java
+/home/ada/learning/vcs-spring/src/main/java/cn/edu/fudan/ada/vcspring/models/Register.java
