@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
 
     @Autowired
@@ -22,7 +23,7 @@ public class StudentController {
     @Autowired
     private CourseService courseService;
 
-    @RequestMapping("/student/{id}")
+    @RequestMapping("/{id}")
     public String login(@PathVariable("id") String id,@RequestParam(value="feedback",required=false,defaultValue="Welcome!") String feedback,Model model) {
         Student student=studentService.findById(id);
         List<Register> registers=registerService.findBySId(id);
@@ -32,7 +33,7 @@ public class StudentController {
         return "student";
     }
 
-    @RequestMapping("/student/{id}/course")
+    @RequestMapping("/{id}/course")
     public String sCourseQuery(@PathVariable("id") String id, @RequestParam(value="cId",required=false,defaultValue="%" ) String cId, @RequestParam(value="cName",required=false, defaultValue="%") String cName, @RequestParam(value="iName",required=false,defaultValue="%")String iName, Model model){
         List<Course> courses=courseService.findByIdLikeAndNameLikeAndINameLike(cId,cName,iName);
         model.addAttribute("id",id);
@@ -41,7 +42,7 @@ public class StudentController {
         return "course";
     }
 
-    @RequestMapping("/student/{id}/course/add")
+    @RequestMapping("/{id}/course/add")
     public String sAddCourse(@PathVariable("id") String sId, @RequestParam(value="cId") String cId, @RequestParam(value="cName") String cName,@RequestParam(value="iId")String iId, @RequestParam(value="iName")String iName, Model model){
        String feedback=registerService.addRegister(cId,cName,iId,iName,sId);
        model.addAttribute("id",sId);
@@ -50,7 +51,7 @@ public class StudentController {
     }
 
 
-    @RequestMapping("/student/{id}/course/delete")
+    @RequestMapping("/{id}/course/delete")
     public String sDeleteCourse(@PathVariable("id") String sId, @RequestParam(value="cId") String cId, @RequestParam(value="cName") String cName,@RequestParam(value="iId")String iId, @RequestParam(value="iName")String iName, Model model){
         String feedback=registerService.deleteRegister(cId,cName,iId,iName,sId);
         model.addAttribute("id",sId);
