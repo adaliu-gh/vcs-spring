@@ -32,14 +32,6 @@ public class StudentController {
         return "student";
     }
 
-    //@RequestMapping("/student/{id}/register")
-    //public String sMyCourses(@PathVariable("id") String id, Model model){
-    //List<Register> registers=registerService.findBySId(id);
-    //model.addAttribute("id",id);
-    //model.addAttribute("registers",registers);
-    //return "register";
-    //}
-
     @RequestMapping("/student/{id}/course")
     public String sCourseQuery(@PathVariable("id") String id, @RequestParam(value="cId",required=false,defaultValue="%" ) String cId, @RequestParam(value="cName",required=false, defaultValue="%") String cName, @RequestParam(value="iName",required=false,defaultValue="%")String iName, Model model){
         List<Course> courses=courseService.findByIdLikeAndNameLikeAndINameLike(cId,cName,iName);

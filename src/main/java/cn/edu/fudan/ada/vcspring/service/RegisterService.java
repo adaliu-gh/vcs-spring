@@ -21,7 +21,6 @@ public class RegisterService{
         }
         else {
             Course course=courseDao.findById(cId);
-            int capacity=course.getCapacity();
             int margin=course.getMargin();
             if (margin==0){
                 return "Sorry, capacity for this course is full!";
