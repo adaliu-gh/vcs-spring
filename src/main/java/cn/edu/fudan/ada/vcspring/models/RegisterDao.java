@@ -4,8 +4,8 @@ import java.util.*;
 import org.springframework.data.repository.CrudRepository;
 
 public interface RegisterDao extends CrudRepository<Register, Long>{
-    List<Register> findByCId(String cId);
-    List<Register> findBySId(String sId);
-    List<Register> findByIId(String iId);
-    Register findByCIdAndSId(String cId, String sId);
+    List<Register> findByCourseId(String courseId);
+    List<Register> findByStudentId(String studentId);
+    List<Register> findByInstructorId(String instructorId);
+    Register findByCourseIdAndStudentId(String courseId, String studentId);
 }

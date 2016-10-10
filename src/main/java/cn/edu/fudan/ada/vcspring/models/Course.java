@@ -12,23 +12,23 @@ public class Course{
     @Id
     private String id;
     private String name;
-    private String iId;
-    private String iName;
+    private String instructorId;
+    private String instructorName;
     private int capacity=2;
     private int margin=2;
 
     protected Course(){};
 
-    public Course(String id, String name, String iId, String iName){
+    public Course(String id, String name, String instructorId, String instructorName){
         this.id=id;
         this.name=name;
-        this.iId=iId;
-        this.iName=iName;
+        this.instructorId=instructorId;
+        this.instructorName=instructorName;
     }
 
     @Override
     public String toString(){
-        return String.format("Course[id=%s, name=%S,iId=%s,iName=%s,capacity=%d,margin=%d]",id,name,iId,iName);
+        return String.format("Course[id=%s, name=%S,instructorId=%s,instructorName=%s,capacity=%d,margin=%d]",id,name,instructorId,instructorName);
     }
 
     public String getId(){
@@ -39,11 +39,11 @@ public class Course{
         return name;
     }
 
-    public String getIId(){
-        return iId;
+    public String getInstructorId(){
+        return instructorId;
     }
-    public String getIName(){
-        return iName;
+    public String getInstructorName(){
+        return instructorName;
     }
     public int getCapacity(){
         return capacity;

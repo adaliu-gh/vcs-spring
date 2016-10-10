@@ -12,47 +12,47 @@ public class Register{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    private String cId;
-    private String cName;
-    private String sId;
-    private String sName;
-    private String iId;
-    private String iName;
+    private String courseId;
+    private String courseName;
+    private String studentId;
+    private String studentName;
+    private String instructorId;
+    private String instructorName;
     private int score=-1;
 
     protected Register(){};
 
-    public Register(String cId, String cName, String sId, String sName, String iId, String iName){
-        this.cId=cId;
-        this.cName=cName;
-        this.sId=sId;
-        this.sName=sName;
-        this.iId=iId;
-        this.iName=iName;
+    public Register(String courseId, String courseName, String studentId, String studentName, String instructorId, String instructorName){
+        this.courseId=courseId;
+        this.courseName=courseName;
+        this.studentId=studentId;
+        this.studentName=studentName;
+        this.instructorId=instructorId;
+        this.instructorName=instructorName;
     }
 
     @Override
     public String toString(){
-        return String.format("Register[id=%d, cId=%s, cName=%s, sId=%s, sName=%s, iId=%s,iName=%s,score=%d]",id,cId,cName,sId,sName,iId,iName,score);
+        return String.format("Register[id=%d, courseId=%s, courseName=%s, studentId=%s, studentName=%s, instructorId=%s,instructorName=%s,score=%d]",id,courseId,courseName,studentId,studentName,instructorId,instructorName,score);
     }
 
-    public String getCId(){
-        return cId;
+    public String getCourseId(){
+        return courseId;
     }
-    public String getCName(){
-        return cName;
+    public String getCourseName(){
+        return courseName;
     }
-    public String getSId(){
-        return sId;
+    public String getStudentId(){
+        return studentId;
     }
-    public String getSName(){
-        return sName;
+    public String getStudentName(){
+        return studentName;
     }
-    public String getIId(){
-        return iId;
+    public String getInstructorId(){
+        return instructorId;
     }
-    public String getIName(){
-        return iName;
+    public String getInstructorName(){
+        return instructorName;
     }
     public int getScore(){
         return score;

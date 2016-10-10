@@ -6,10 +6,10 @@
 <body>
   <ul>
     <li>
-      <input type="text" value="course_id" readonly="readonly"></input>
-      <input type="text" value="course_name" readonly="readonly"></input>
-      <input type="text" value="instructor_id" readonly="readonly"></input>
-      <input type="text" value="instructor_name" readonly="readonly"></input>
+      <input type="text" value="courseId" readonly="readonly"></input>
+      <input type="text" value="courseName" readonly="readonly"></input>
+      <input type="text" value="instructorId" readonly="readonly"></input>
+      <input type="text" value="instructorName" readonly="readonly"></input>
       <input type="text" value="capacity" readonly="readonly"></input>
       <input type="text" value="margin" readonly="readonly"></input>
     </li>
@@ -17,10 +17,10 @@
   <ul th:each="course: ${courses}">
     <li>
       <form th:action="@{'/' + ${role} + '/' + ${id} +'/course/add'}" method="post">
-        <input type="text" name="cId" th:value="${course.id}" readonly="readonly"></input>
-        <input type="text" name="cName" th:value="${course.name}" readonly="readonly"></input>
-        <input type="text" name="iId" th:value="${course.iId}" readonly="readonly"></input>
-        <input type="text" name="iName" th:value="${course.iName}" readonly="readonly"></input>
+        <input type="text" name="courseId" th:value="${course.id}" readonly="readonly"></input>
+        <input type="text" name="courseName" th:value="${course.name}" readonly="readonly"></input>
+        <input type="text" name="instructorId" th:value="${course.instructorId}" readonly="readonly"></input>
+        <input type="text" name="instructorName" th:value="${course.instructorName}" readonly="readonly"></input>
         <input type="text" name="capacity" th:value="${course.capacity}" readonly="readonly"></input>
         <input type="text" name="margin" th:value="${course.margin}" readonly="readonly"></input>
         <input type="submit" th:value="add"></input>

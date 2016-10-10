@@ -9,14 +9,14 @@
     <input type="submit" value="Back"></input>
     </form>
   <ul>
-    <li>course_id::course_name::instructor_id::instructor_name::score</li>
+    <li>courseId::courseName::instructorId::instructorName::score</li>
   </ul>
   <ul th:each="register: ${registers}">
     <li>
-      <span th:text="${register.cId}">cId</span>::
-      <span th:text="${register.cName}">cName</span>::
-      <span th:text="${register.iId}">iId</span>::
-      <span th:text="${register.iName}">iName</span>::
+      <span th:text="${register.courseId}">courseId</span>::
+      <span th:text="${register.courseName}">courseName</span>::
+      <span th:text="${register.instructorId}">instructorId</span>::
+      <span th:text="${register.instructorName}">instructorName</span>::
       <span th:text="${register.score}">scores</span>
     </li>
   </ul>
